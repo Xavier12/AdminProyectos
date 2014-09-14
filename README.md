@@ -1,4 +1,5 @@
 AdminRec
 ========
 
-Experiencia Educativa
+Este repositorio es exclusivo para la experiencia educativa Administración de Poryectos
+
