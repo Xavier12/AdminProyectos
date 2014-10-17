@@ -1,0 +1,1 @@
+En esta carpeta se pondrá todo los archvos relacionados al proyecto
