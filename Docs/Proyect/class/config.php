@@ -5,11 +5,11 @@
 	$host='localhost'; 
  
 	//Usuario 
-	$user='root'; 
+	$user='buffet'; 
  
 	//Password 
 	$password=''; 
  
 	//Base de datos a utilizar 
-	$db='codigo';
+	$db='despacho';
 ?>
