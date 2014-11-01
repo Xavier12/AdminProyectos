@@ -3,13 +3,6 @@ img{border: 0px;}
 hr{border:1px solid #FFFFFF;}
 a{text-decoration: none;}
 
-
-#pepe{
-	height: 400px;
-	width: 300px;
-	border-radius: 1000px;
-}
-
 #A-menu img
 {
 	float: right;
@@ -52,23 +45,36 @@ a{text-decoration: none;}
 	margin-top:4px;
 	text-align: center;
 }
-
-#formulario
-{
-    /*border :1px solid red;*/
-
-    float: right;
-    display: inline-block;
+/*.top-bar {
+    background: red;
 }
-#formulario input[type='text'], input[type='password']
+
+.top-bar-section li a:not(.button) {
+    background: blue !important;   
+}
+*/
+.top-bar-section li a:not(.button):hover 
 {
-    /*float: right;*/
+    transition: background-color 0.5s ease;
+    background: #F1B328 !important;   
+}
+/*
+.top-bar-section ul li.active > a {
+    background: gray !important;   
+}
+
+.top-bar-section ul li.active > a:hover {
+    background: yellow !important;   
+}*/
+
+
+#formulario input
+{
     display: inline-block;
-	/*border: 1px solid #000000;*/
 	border-radius: 10px;
-	text-align: center;
-    height: 25px;
-	width: 70px;
+	text-align: center !important; ;
+    height: 25px !important; ;
+	width: 70px !important; ;
 }
 
 #formulario input[type="submit"]
@@ -114,14 +120,12 @@ a{text-decoration: none;}
 {
 	/*border: 1px solid green;*/
     margin-top: 5%;
-    display: block;
 }
 
-#FF-info
+#F-info h3
 {
-    margin:auto;
-    width: 18%;
-    /*border: 1px solid red;*/
+    margin-bottom: 51px;
+    margin: auto;
 }
 
 
@@ -288,7 +292,7 @@ a{text-decoration: none;}
 	font-family:'Fira Sans', Helvetica, Arial, sans-serif;
 	font-size: 14px;
     font-weight: bold;
-    display: inline;
+
 }
 
 .fireSans18
