@@ -110,15 +110,15 @@ class Db{
 		return $cadena;
 	} 
 
-}
 
-
-
-function str_replace_deep($subject)
+   function str_replace_deep($subject)
 {
-	$search=array("select", "delete", "drop", "iframe", "frame", "script",chr(92)); 
-	$replace=array("","","","","","",""); 
-	return str_replace($search, $replace, $subject);
-    
+   $search=array("select", "delete", "drop", "iframe", "frame", "script",chr(92)); 
+   $replace=array("","","","","","",""); 
+   return str_replace($search, $replace, $subject);
 }
+
+}
+
+
 ?>
