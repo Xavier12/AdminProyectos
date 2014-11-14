@@ -10,6 +10,7 @@
   <title>Despacho</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/marketing.css">
     <meta name="viewport" content="width=device-width">
     <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="js/Carrusel3.js"></script>
@@ -22,11 +23,13 @@
 </head>
 <body>
 <?php require("Carrusel.php");?>
-<div data-magellan-expedition="fixed" >
+<div data-magellan-expedition="fixed"  class="magellan-container">
       <ul class="sub-nav" id="B-formulario">
         <li data-magellan-arrival="somos"><a href="#somos">¿Quienes somos?</a></li>
         <li data-magellan-arrival="clientes"><a href="#clientes">Clientes</a></li>
         <li data-magellan-arrival="servicios"><a href="#servicios">Servicio</a></li>
+        <li data-magellan-arrival="numeros"><a href="#numeros">Nuestros números</a></li>
+        <li data-magellan-arrival="info"><a href="#info">Redes-Localización</a></li>
         <!-- <li class=" small-2 large-2 medium-2 columns">
           <input type="text" placeholder="Email" />
         </li>
@@ -37,6 +40,7 @@
         <form method="POST" id="formulario" class="right" action="." data-abide>
             <div>
                   <input type="submit" name="btLog" value="Login" class="right"> 
+                 <!-- <li><a href="index.php" name="btLog" class="alert button expand">Cerrar Sesion</a></li> -->
                 <div class="right">
                   <input name="txtPass" type="password" placeholder="Password" required>
                   <small class="error">Se requiere la contraseña</small>

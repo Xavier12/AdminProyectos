@@ -1,7 +1,8 @@
 body{margin:0px;}
 img{border: 0px;}
-hr{border:1px solid #FFFFFF;}
+
 a{text-decoration: none;}
+
 
 #A-menu img
 {
@@ -16,6 +17,13 @@ a{text-decoration: none;}
 	padding: 0px;
 }
 
+.the-numbers    
+{
+    background: url(../images/business-hero2.jpg) no-repeat center top #064f68;
+    width: 100%;
+    padding: 40px 0;
+    margin: 40px 0;
+}
 .small
 {
  color: #FFFFFF !important;
@@ -142,10 +150,15 @@ a{text-decoration: none;}
 	width:250px;
 }
 
-#F-info	
+/*#F-info	
 {
-	/*border: 1px solid green;*/
+	border: 1px solid green;
     margin-top: 5%;
+}*/
+
+.separador
+{
+     border-color:#FFFFFF;
 }
 
 #F-info h3
@@ -155,11 +168,11 @@ a{text-decoration: none;}
 }
 
 
-#G-clientes
+/*#G-clientes
 {
     margin-top: 10%;
 }
-
+*/
 #GG-cliente
 {
 	margin:auto;
@@ -169,7 +182,7 @@ a{text-decoration: none;}
 
 #H-servicio
 {
-    margin-top: 10%;
+    /*margin-top: 10%;*/
 }
 
 #HH-servicio

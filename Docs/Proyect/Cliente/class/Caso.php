@@ -38,9 +38,6 @@
 				$usuarios[] = $usuario;
 			}
 			return $usuarios;
-
-
-			return $caso;
 		}
 
 		public static function removeCaso($id, $bd)

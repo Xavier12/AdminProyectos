@@ -4,15 +4,15 @@
 		$db=Db::getInstance();
 
 
-		$query="SELECT idAbogado,Nombre,ApP FROM Abogado";
+		$query="SELECT idAbogado,Nombre,ApP,ApM FROM Abogado";
 		$indice=0;
 		$var=$db->ejecutar($query);
 
 		while ($row=$db->obtener_fila($var,0)) 
 		{
-			$name=$row['Nombre'];
-			$app=$row['ApP'];
-			$arrAbo[$indice] = $name." ".$app;
+			// $name=$row['Nombre'];
+			// $app=$row['ApP'];
+			$arrAbo[$indice] = $row['Nombre']." ".$row['ApP']." ".$row['ApM'];
 			$arr[$indice] = $row['idAbogado'];
 			$indice=$indice+1;
 		}

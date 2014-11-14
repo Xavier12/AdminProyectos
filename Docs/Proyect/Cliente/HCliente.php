@@ -1,6 +1,17 @@
 <?php 
+  session_start();
   require('class/db.class.php');
   require('class/conf.class.php'); 
+
+  
+  $db=Db::getInstance();
+  
+  $id=$_SESSION['var'];
+
+  $query= "SELECT Nombre,ApP,ApM FROM Cliente WHERE idAbogado ='{$id}'";
+  $resul=$db->ejecutar($query);
+
+  $row=$db->obtener_fila($resul,0);
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -26,6 +37,7 @@
     		<section class="top-bar-section">
     			<ul class="right">
             <li><a href="Abogado.php">Mi caso</a></li>
+            <li><a href="index.php?pag=cerrar" class="alert button expand">Cerrar Sesion</a></li>
 
     			</ul>
     		</section>

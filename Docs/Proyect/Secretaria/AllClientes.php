@@ -53,6 +53,9 @@
 						<a onclick = "if (!confirm('¿Desea borrar el usuario?')) return false;" href="index.php?pag=delet&iduser=<?=$usuario->getId();?>">
                         	<img src="Res/del.png">
                         </a>
+                        <a href="index.php?pag=mode&iden=<?=$usuario->getID();?> ">
+                        	<img src="Res/up.png">
+                        </a>
 					</td>
 				</tr>
 				<?php endforeach ?>

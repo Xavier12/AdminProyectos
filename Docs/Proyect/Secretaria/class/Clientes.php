@@ -19,6 +19,31 @@ class Cliente{
 		$this->usuario=$usuario;
 	}
 
+	public static function getClient($id,$bd)
+	{
+		$row =$bd->ejecutar(" SELECT *  FROM Cliente WHERE idCliente='{$id}' ");
+		$result=$bd->obtener_fila($row,0);
+			
+		return $result;	
+	}
+
+	public static function update($usuario, $bd)
+	{
+			$id= $usuario['idec'];
+			$nombre= $usuario['nombre'];
+			$app = $usuario['app'];
+			$apm= $usuario['apm'];
+			$dir=$usuario['dir'];
+			$sexo=$usuario['sexo'];	
+			$query="UPDATE Cliente SET `Nombre` = '{$nombre}', `ApP` = '{$app}', `ApM` = '{$apm}', `Domicilio` = '{$dir}', `Sexo` ='{$sexo}' WHERE `idCliente` = '{$id}' ";
+			
+			$bd->ejecutar($query);	
+
+			echo '<script language="javascript">
+					alert("pepe");
+				</script>';		
+	}
+
 	public static function addClient($usuario,$bd)
 	{
 		$nombre=$usuario['nombre'];

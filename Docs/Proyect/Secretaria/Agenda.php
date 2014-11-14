@@ -3,29 +3,25 @@
 		// require('Secretaria.php');
 		$db=Db::getInstance();
 
-
-		$query="SELECT idAbogado,Nombre,ApP FROM Abogado";
+		$query="SELECT idAbogado,Nombre,ApP,ApM FROM Abogado";
 		$indice=0;
 		$var=$db->ejecutar($query);
 
 		while ($row=$db->obtener_fila($var,0)) 
 		{
-			$name=$row['Nombre'];
-			$app=$row['ApP'];
-			$arrAbo[$indice] = $name." ".$app;
+			
+			$arrAbo[$indice] = $row['Nombre']." ".$row['ApP']." ".$row['ApM'];
 			$idAbogado[$indice] = $row['idAbogado'];
 			$indice=$indice+1;
 		}
 
-		$query="SELECT idCliente,Nombre,ApP FROM Cliente";
+		$query="SELECT idCliente,Nombre,ApP,ApM FROM Cliente";
 		$indice=0;
 		$var=$db->ejecutar($query);
 
 		while ($row=$db->obtener_fila($var,0)) 
 		{
-			$nameC=$row['Nombre'];
-			$appC=$row['ApP'];
-			$arrC[$indice] = $nameC." ".$appC;
+			$arrC[$indice] = $row['Nombre']." ".$row['ApP']." ".$row['ApM'];
 			$idCliente[$indice] = $row['idCliente'];
 			$indice=$indice+1;
 		}

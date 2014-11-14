@@ -11,8 +11,8 @@
 ?>
 <div id="main-content">
 	<div class="row ">
-		<div class="small-12 small-centered medium-4 medium-centered large-4 large-centered  columns">
-			<h2>Datos de clientes</h2>
+		<div class="small-12 small-centered medium-5 medium-centered large-5 large-centered  columns">
+			<h2>Datos de Secretaria</h2>
 		</div>
 	</div>
 
@@ -52,6 +52,9 @@
 					<td scope="row">
 						<a onclick = "if (!confirm('¿Desea borrar el usuario?')) return false;" href="index.php?pag=dele&iduser=<?=$usuario->getId();?>">
                         	<img src="Res/del.png">
+                        </a>
+                        <a href="index.php?pag=mod&id=<?=$usuario->getID();?> ">
+                        	<img src="Res/up.png">
                         </a>
 					</td>
 				</tr>

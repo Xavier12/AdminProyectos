@@ -44,6 +44,22 @@
 			return $usuarios;
 		}
 
+		public static function update($usuario, $bd)
+		{
+			$id= $usuario['iden'];
+			$cliente=$usuario['client'];
+			$secre=$usuario['secre'];
+			$abo=$usuario['abo'];
+			$lugar = $usuario['lugar'];
+			$dir= $usuario['dir'];
+			$hr=$usuario['hr'];
+			$act=$usuario['act'];	
+			
+			$query="UPDATE Agenda SET `Lugar` = '{$lugar}', `Direccion` = '{$dir}', `Actividad` = '{$act}', `Hr` = '{$dir}', `AbogadoidAbogado` ='{$tipo}' WHERE `ClienteidCliente` = '{$id}' ";
+			
+			$bd->ejecutar($query);			
+		}
+
 		public static function removeAgenda($id, $bd)
 		{	
 			echo $id;

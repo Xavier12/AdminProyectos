@@ -1,8 +1,4 @@
-<?php 
-  require('class/db.class.php');
-  require('class/conf.class.php');
 
-?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>

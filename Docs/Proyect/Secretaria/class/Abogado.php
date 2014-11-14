@@ -13,6 +13,14 @@
 		$this->usuario=$usuario;
 	}
 
+	public static function getAbo($id,$bd)
+	{
+		$row =$bd->ejecutar(" SELECT *  FROM Abogado WHERE idAbogado='{$id}' ");
+		$result=$bd->obtener_fila($row,0);
+			
+		return $result;	
+	}
+
 	public static function addAbo($usuario,$bd)
 	{
 			$nombre=$usuario['nombre'];
@@ -49,8 +57,22 @@
 
 			$query = "DELETE FROM Abogado WHERE idAbogado = '{$id}'";
 			$resul = $bd->ejecutar($query);
-			
 	}
+
+	public static function update($usuario, $bd)
+	{
+			$id= $usuario['ide'];
+			$nombre= $usuario['nombre'];
+			$app = $usuario['app'];
+			$apm= $usuario['apm'];
+			$dir=$usuario['dir'];
+			$tipo=$usuario['tipo'];	
+			
+			$query="UPDATE Abogado SET `Nombre` = '{$nombre}', `ApP` = '{$app}', `ApM` = '{$apm}', `Domicilio` = '{$dir}', `Tipo` ='{$tipo}' WHERE `idAbogado` = '{$id}' ";
+			
+			$bd->ejecutar($query);			
+	}
+
 
 	public function getId()
 	{
