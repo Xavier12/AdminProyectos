@@ -5,7 +5,7 @@
 	$host='localhost'; 
  
 	//Usuario 
-	$user='root'; 
+	$user=''; 
  
 	//Password 
 	$password=''; 
