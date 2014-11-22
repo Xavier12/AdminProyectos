@@ -1,5 +1,5 @@
 	<?php 
-		require('HSecre.php');
+		// require('HSecre.php');
 		// require('Secretaria.php');
 		$db=Db::getInstance();
 
@@ -55,12 +55,12 @@
 	<div id="main-content">
 		<div class="row">
 			<div class="small-12 small-centered medium-5 medium-centered large-6 large-centered columns">
-				<h2>Agregar nuevo caso</h2>
+				<h2>modificar caso</h2>
 			</div>
 		</div>
 		<div class="row">
 			<div class="small-12 large-12 small-centered large-centered columns">
-				<form method="POST" action="index.php?pag=caso">
+				<form method="POST" action="index.php?pag=modCaso&idec=<?=$rowCaso['idCaso']?>">
 					<div class="row">
 						<div class="large-6 large-centered columns">
 							<label>Estado</label>
@@ -74,25 +74,25 @@
 					<div class="row">
 						<div class="large-6 large-centered columns">
 							<label>Costo</label>
-							<input type="text" name="txtCosto" placeholder="Lugar de la cita">
+							<input type="text" name="txtCosto" placeholder="Lugar de la cita" value="<?=$rowCaso['Costo']?>">
 						</div>
 					</div>
 					<div class="row">
 						<div class="large-6 large-centered columns">
 							<label>Fecha Inicio</label>
-							<input type="text" name="txtFecha" placeholder="Fecha de inicio del caso">
+							<input type="text" name="txtFecha" placeholder="Fecha de inicio del caso" value="<?=$rowCaso['FechaInicio']?>">
 						</div>
 					</div>
 					<div class="row">
 						<div class="large-6 large-centered columns">
 							<label>Fecha que termino</label>
-							<input type="text" name="txtFechaTerm" placeholder="Fecha que termino el caso">
+							<input type="text" name="txtFechaTerm" placeholder="Fecha que termino el caso" value="<?=$rowCaso['FechaTerm']?>">
 						</div>
 					</div>
 					<div class="row">
 						<div class="large-6 large-centered columns">
 							<label>Detalle</label>
-							<input type="text" name="txtDetalle" placeholder="Detalles del caso">
+							<input type="text" name="txtDetalle" placeholder="Detalles del caso" value="<?=$rowCaso['Detalle']?>">
 						</div>
 					</div>
 
@@ -102,7 +102,7 @@
 							<select name="materia">
 								<?php $x=0;?>
 								<?php foreach ($all_materia as $materia):?>
-          						<option value="<?=$idMateria[$x]?>"  > <?= ($materia)?> </option>
+          						<option value="<?=$idMateria[$x]?>" > <?= ($materia)?> </option>
           						<!-- <option value="Ivan Barradas">Carlos</option>
           						<option value="Roberto Bahena">Alberto</option>
           						<option value="Oscar Jim">Pepe</option> -->
@@ -126,19 +126,6 @@
           						<option value="Roberto Bahena">Alberto</option>
           						<option value="Oscar Jim">Pepe</option> -->
 								
-								<?php $j++; ?>
-          						<?php endforeach ?>
-        					</select>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="large-6 large-centered columns">
-							<label>Abogado</label>
-							<select name="abogado">
-								<?php $j=0;?>
-								<?php foreach ($all_address as $abo):?>
-          						<option value="<?=$arr[$j]?>"> <?= ($abo)?> </option>
 								<?php $j++; ?>
           						<?php endforeach ?>
         					</select>

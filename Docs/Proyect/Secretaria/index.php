@@ -34,7 +34,7 @@ $pagina=$db->replace($pagina);
 		$dir=	  isset($_POST['txtDir']) && !empty($_POST['txtDir']) ? $_POST['txtDir']: "";
 		$des=	  isset($_POST['txtDes']) && !empty($_POST['txtDes']) ? $_POST['txtDes']: "";
 		$sex= 	  isset($_POST['rdSex']) && !empty($_POST['rdSex']) ? $_POST['rdSex']: "";
-		$tipo= 	  isset($_POST['rdTipo']) && !empty($_POST['rdTipo']) ? $_POST['rdTipo']: "";
+		$tipoA= 	  isset($_POST['rdTipo']) && !empty($_POST['rdTipo']) ? $_POST['rdTipo']: "";
 		$abo= 	  isset($_POST['abogado']) && !empty($_POST['abogado']) ? $_POST['abogado']: "";
 		$cliente= isset($_POST['cliente']) && !empty($_POST['cliente']) ? $_POST['cliente']: "";
 		$materia= isset($_POST['materia']) && !empty($_POST['materia']) ? $_POST['materia'] : "";
@@ -61,7 +61,7 @@ switch ($pagina) {
 		break;
 
 	case 'lawyer':	
-		$arreglo = array('nombre' => $nombre, 'app' => $apP, 'apm' => $apM, 'dir' => $dir, 'tipo'=> $tipo, 'user' => $user, 'pass' => $pass, 'sexo' =>$sex);
+		$arreglo = array('nombre' => $nombre, 'app' => $apP, 'apm' => $apM, 'dir' => $dir, 'tipo'=> $tipoA, 'user' => $user, 'pass' => $pass, 'sexo' =>$sex);
 		Abogado::addAbo($arreglo,$db);
 		echo '<script language="javascript">
 					document.location=".";
@@ -119,8 +119,7 @@ switch ($pagina) {
 			
 			$idElim = (isset($_GET['iduser']) && !empty($_GET['iduser'])) ? $_GET['iduser'] : "";	
 			Agenda::removeAgenda($idElim,$db);
-			echo "idElim";
-			echo "<script>alert('hola');</script>";
+			
 			echo '<script language="javascript">
 					document.location=".";
 				</script>';
@@ -145,7 +144,7 @@ switch ($pagina) {
 
 	case 'caso':	
 
-			$arreglo = array('edo' => $edo, 'costo' => $costo, 'fecha' => $fecha, 'fechaTerm' => $fechaTerm,'detalle' => $detalle,'cliente' => $cliente, 'materia' => $materia);
+			$arreglo = array('edo' => $edo, 'costo' => $costo, 'fecha' => $fecha, 'fechaTerm' => $fechaTerm,'detalle' => $detalle,'cliente' => $cliente, 'materia' => $materia,'abo' => $abo);
 
 			Caso::addCaso($db,$arreglo);
 			echo '<script language="javascript">
@@ -167,7 +166,7 @@ switch ($pagina) {
 	case 'modAbo':
 				$ide= (isset($_GET['ide']) && !empty($_GET['ide'])) ? $_GET['ide'] : "";
 				$ide=$db->replace($ide);		
-				$arregloA = array('nombre' => $nombre, 'app' => $apP, 'apm' => $apM, 'dir' => $dir, 'tipo'=> $tipo, 'sexo' =>$sex, 'ide' => $ide);
+				$arregloA = array('nombre' => $nombre, 'app' => $apP, 'apm' => $apM, 'dir' => $dir, 'tipo'=> $tipoA, 'sexo' =>$sex, 'ide' => $ide);
 				Abogado::update($arregloA,$db);
 				echo '<script language="javascript">
 					document.location=".";
@@ -198,6 +197,52 @@ switch ($pagina) {
 				</script>';
 				
 			break;
+	case 'modA':
+				$ident= (isset($_GET['idea']) && !empty($_GET['idea'])) ? $_GET['idea'] : "";
+				$ident=$db->replace($ident);					
+				$rowAgenda=Agenda::getAgenda($ident,$db);
+				
+				include ('updateAgenda.php');
+				// echo '<script language="javascript">
+				// 	document.location=".";
+				// </script>';
+				
+			break;
+
+	case 'modAgenda':
+				$ide= (isset($_GET['idea']) && !empty($_GET['idea'])) ? $_GET['idea'] : "";	
+				$ide=$db->replace($ide);	;
+				$arregloA = array('act' => $act, 'lugar' => $Lugar, 'hr' => $hr, 'dir' => $dir, 'secre'=> $id, 'abo' => $abo, 'client' => $cliente,'idea' => $ide);
+				Agenda::update($arregloA,$db);
+				echo '<script language="javascript">
+					document.location=".";
+				</script>';
+				
+			break;
+
+	case 'modC':
+				$idenC= (isset($_GET['idec']) && !empty($_GET['idec'])) ? $_GET['idec'] : "";
+				$idenC=$db->replace($idenC);					
+				$rowCaso=Caso::getCaso($idenC,$db);
+				
+				include ('updateCaso.php');
+				// echo '<script language="javascript">
+				// 	document.location=".";
+				// </script>';
+				
+			break;
+
+	case 'modCaso':
+				$ide= (isset($_GET['idec']) && !empty($_GET['idec'])) ? $_GET['idec'] : "";	
+				$ide=$db->replace($ide);	
+				
+				$arregloA = array('edo' => $edo, 'costo' => $costo, 'fecha' => $fecha, 'fechaTerm' => $fechaTerm, 'secre'=> $id, 'materia' => $materia, 'cliente' => $cliente, 'idec'=> $ide);
+				Caso::update($arregloA,$db);
+				echo '<script language="javascript">
+					document.location=".";
+				</script>';
+				
+			break;
 
 	case 'materia':	
 
@@ -208,11 +253,12 @@ switch ($pagina) {
 					document.location=".";
 				</script>';
 		break;
+
 	
 	default:
 			// require ('Abogados.php');
 		break;
 }
-
+require('Secre.php');
 require ('FSecre.php');
 ?>

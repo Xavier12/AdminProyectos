@@ -14,6 +14,34 @@
 			$this->cliente=$cliente;
 		}
 
+		public static function getCaso($id,$bd)
+		{
+			$row =$bd->ejecutar(" SELECT *  FROM Caso WHERE idCaso='{$id}' ");
+			$result=$bd->obtener_fila($row,0);
+			
+		return $result;	
+		}
+
+		public static function update($caso, $bd)
+		{
+			$id= $caso['idec'];
+			$materia=$caso['materia'];
+			$edo=$caso['edo'];
+			$cliente=$caso['cliente'];
+			$costo=$caso['costo'];
+			$fecha=$caso['fecha'];
+			$fechaTerm=$caso['fechaTerm'];
+			// $detalle=$caso['detalle'];
+			// $query="UPDATE Caso SET `Estado` = '{$edo}', `Costo` = '{$costo}', `FechaInicio` = '{$fecha}', `FechaTerm` = '{$fechaTerm}', `Detalle` ='{$detalle}', `MateriaidMateria` ='{$materia}', `ClienteidCliente` ='{$cliente}' WHERE `idCaso` = '{$id}' ";
+			$query="UPDATE Caso SET `Estado` = '{$edo}', `Costo` = '{$costo}', `FechaInicio` = '{$fecha}', `FechaTerm` = '{$fechaTerm}', `MateriaidMateria` ='{$materia}', `ClienteidCliente` ='{$cliente}' WHERE `idCaso` = '{$id}' ";
+
+			$bd->ejecutar($query);	
+
+			echo '<script language="javascript">
+					alert("pepe");
+				</script>';		
+		}
+
 		public static function addCaso($bd,$caso)
 		{
 			$materia=$caso['materia'];
@@ -23,8 +51,9 @@
 			$fecha=$caso['fecha'];
 			$fechaTerm=$caso['fechaTerm'];
 			$detalle=$caso['detalle'];
+			$abo=$caso['abo'];
 		
-			$query="INSERT INTO Caso(`Estado`, `Costo`, `FechaInicio`,`FechaTerm`,`Detalle`,`MateriaidMateria`, `ClienteidCliente`) VALUES ('{$edo}','{$costo}','{$fecha}','{$fechaTerm}','{$detalle}','{$materia}','{$cliente}')";
+			$query="INSERT INTO Caso(`Estado`, `Costo`, `FechaInicio`,`FechaTerm`,`Detalle`,`MateriaidMateria`, `ClienteidCliente`,`AbogadoidAbogado`) VALUES ('{$edo}','{$costo}','{$fecha}','{$fechaTerm}','{$detalle}','{$materia}','{$cliente}','{$abo}')";
 			$bd->ejecutar($query);	
 		}
 

@@ -31,6 +31,18 @@
 			$materia[$indice]=$row['Tipo'];
 			$indice++;
 		}	
+
+		$query= "SELECT * FROM Caso,Abogado WHERE Caso.AbogadoidAbogado = Abogado.idAbogado";
+		$resul=$db->ejecutar($query);
+
+		$indice=0;
+		while($row=$db->obtener_fila($resul,0))
+		{
+			// $estado[$indice]=$row['Estado'];
+			$nombreAbo[$indice]=$row['Nombre']." ".$row['ApP']." ".$row['ApM'];
+			$indice++;
+		}
+
 ?>
 <div id="main-content">
 	<div class="row ">
@@ -46,10 +58,10 @@
 				<th scope="column">Estado</th>
 				<!-- <th scope="column">Secretaria</th> -->
 				<th scope="column">Costo</th>
-				<th scope="column">Fecha</th>
+				<th scope="column">Fecha en que inicio</th>
 				<th scope="column">Asunto</th>
 				<th scope="column">Cliente</th>
-				
+				<th scope="column">Abogado</th>
 				<th scope="column">Acciones</th>
 			</thead>
 			<tbody>
@@ -72,13 +84,16 @@
 					<td scope="row">
 						<?= $nombre[$x]; ?> 
 					</td>
+					<td scopre="row">
+						<?=$nombreAbo[$x]?>
+					</td>
 					<?php $x++;?>
 					
 					<td scope="row">
 						<a onclick = "if (!confirm('¿Desea borrar el usuario?')) return false;" href="index.php?pag=d&iduser=<?=$usuario->getId();?>">
                         	<img src="Res/del.png">
                         </a>
-                        <a href="index.php?pag=mod&id=<?=$usuario->getID();?> ">
+                        <a href="index.php?pag=modC&idec=<?=$usuario->getID();?> ">
                         	<img src="Res/up.png">
                         </a>
 					</td>

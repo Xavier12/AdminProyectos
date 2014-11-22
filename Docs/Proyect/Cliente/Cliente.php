@@ -7,8 +7,9 @@
 	$db=Db::getInstance();
 	
 	$id=$_SESSION['var'];
-
-	$query= "SELECT Detalle,Estado,Costo,FechaInicio,FechaTerm,Abogado.Nombre,Abogado.ApP, Abogado.ApM, Materia.Tipo FROM Caso,Cliente,Materia,Abogado WHERE Caso.ClienteidCliente = Cliente.idCliente AND Cliente.idCliente='{$id}' AND Caso.MateriaidMateria = Materia.idMateria";
+	//SELECT Abogado.Nombre,Abogado.ApP, Cliente.Nombre, Cliente.ApP, Cliente.ApM, Caso.Estado,Caso.Detalle,Caso.FechaInicio, Caso.FechaTerm,Caso.Estado FROM Caso,Cliente,Abogado WHERE Cliente.idCliente= Caso.ClienteidCliente AND Cliente.nombre="Oscar" AND Caso.AbogadoidAbogado=Abogado.idAbogado
+	// SELECT Cliente.Nombre, Cliente.ApP, Cliente.ApM FROM Caso,Cliente WHERE Cliente.idCliente= Caso.ClienteidCliente AND Cliente.nombre="Leo"
+	$query= "SELECT Abogado.Nombre,Abogado.ApP, Abogado.ApM,Abogado.ApP,Caso.Costo, Caso.Estado,Caso.Detalle,Caso.FechaInicio, Caso.FechaTerm,Caso.Estado FROM Caso,Cliente,Abogado WHERE Cliente.idCliente= Caso.ClienteidCliente AND Cliente.idCliente='{$id}' AND Caso.AbogadoidAbogado=Abogado.idAbogado";
 	$resul=$db->ejecutar($query);
 	$row=$db->obtener_fila($resul,0);
 
@@ -35,7 +36,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Secretaria</title>
+  <title>Cliente</title>
   <link rel="stylesheet" type="text/css" href="../css/foundation.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <meta name="viewport" content="width=device-width">
@@ -44,7 +45,7 @@
 </head>
 <body>
 <div class="contain-to-grid sticky">
-	<div class="top-bar" data-topbar>
+	<div class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
   		<ul class="title-area">
     		<li class="name">
       			<h1 ><a id="cliente"><?=$rowN['Usuario']?></a></h1>
@@ -55,7 +56,7 @@
     		<section class="top-bar-section">
     			<ul class="right">
             		<li><a href="Abogado.php">Mi caso</a></li>
-            		<li><a href="index.php?pag=cerrar">Cerrar Sesion</a></li>
+            		<li><a href="index.php?pag=cerrar" class="alert button expand">Cerrar Sesion</a></li>
     			</ul>
     		</section>
 	 </div>
@@ -102,7 +103,7 @@
 			<div class="row">
 				<div class="large-6 large-centered columns">
 					<label for="">Abogado del caso</label>
-					<input type="text" value="<?=$row['Nombre']?>" disabled>
+					<input type="text" value="<?=$row['Nombre']." ".$row['ApP']." ".$row['ApM']?>" disabled>
 				</div>
 			</div>
 	</div>

@@ -47,8 +47,8 @@
             <!-- Example to add fixed static share buttons in slider BEGIN -->
             <!-- Remove it if no need -->
             <div u="any" style="position: absolute; display: block; top: 6px; right: 170px; width: 280px; height: 40px;">
-                <a class="share-icon share-facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://jssor.com" title="Share on Facebook"></a>
-                <a class="share-icon share-twitter" target="_blank" href="http://twitter.com/share?url=http://jssor.com&text=jQuery%20Image%20Slider/Slideshow/Carousel/Gallery/Banner%20javascript+html%20TOUCH%20SWIPE%20Responsive" title="Share on Twitter"></a>
+                <a class="share-icon share-facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://google.com" title="Share on Facebook"></a>
+                <a class="share-icon share-twitter" target="_blank" href="http://twitter.com/share?url=http://google.com&text=LinkersSoluciones" title="Share on Twitter"></a>
                 <a class="share-icon share-googleplus" target="_blank" href="https://plus.google.com/share?url=http://jssor.com" title="Share on Google Plus"></a>
                 <a class="share-icon share-linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=http://jssor.com" title="Share on LinkedIn"></a>
                 <a class="share-icon share-stumbleupon" target="_blank" href="http://www.stumbleupon.com/submit?url=http://jssor.com&title=jQuery%20Image%20Slider/Slideshow/Carousel/Gallery/Banner%20javascript+html%20TOUCH%20SWIPE%20Responsive" title="Share on StumbleUpon"></a>

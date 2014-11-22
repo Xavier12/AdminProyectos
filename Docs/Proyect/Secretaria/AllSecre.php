@@ -26,7 +26,7 @@
 				<th scope="column">Sexo</th>
 				<th scope="column">Domicilio</th>
 				<th scope="column">Usuario</th>
-				<th scope="column">Acciones</th>
+				<!-- <th scope="column">Acciones</th> -->
 			</thead>
 			<tbody>
 				<?php foreach ($usuarios as $usuario):?>
@@ -49,14 +49,12 @@
 					<td scope="row">
 						<?= ($usuario->getUser()) ?> 
 					</td>
-					<td scope="row">
+					<!-- <td scope="row">
 						<a onclick = "if (!confirm('¿Desea borrar el usuario?')) return false;" href="index.php?pag=dele&iduser=<?=$usuario->getId();?>">
                         	<img src="Res/del.png">
                         </a>
-                        <a href="index.php?pag=mod&id=<?=$usuario->getID();?> ">
-                        	<img src="Res/up.png">
-                        </a>
-					</td>
+                        
+					</td> -->
 				</tr>
 				<?php endforeach ?>
 			</tbody>

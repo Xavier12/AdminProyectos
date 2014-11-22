@@ -75,6 +75,9 @@
 						<a onclick = "if (!confirm('¿Desea borrar el usuario?')) return false;" href="index.php?pag=de&iduser=<?=$usuario->getId();?>">
                         	<img src="Res/del.png">
                         </a>
+                        <a href="index.php?pag=modA&idea=<?=$usuario->getID();?> ">
+                        	<img src="Res/up.png">
+                        </a>
 					</td>
 					<?php $x++;?>
 				</tr>

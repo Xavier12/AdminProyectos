@@ -5,11 +5,12 @@
   $resu=$db->ejecutar("SELECT Nombre FROM Cliente");
   $clientes=$db->num_rows($resu);
 
-  $resul=$db->ejecutar("SELECT * FROM Caso");
-  $casos=$db->num_rows($resul);
 
   $result=$db->ejecutar("SELECT Tipo FROM Materia");
   $materias=$db->num_rows($result);
+
+  $resul=$db->ejecutar("SELECT Estado FROM Caso WHERE Estado='P'");
+  $casosP=$db->num_rows($resul);
 
   $resulta=$db->ejecutar("SELECT Estado FROM Caso WHERE Estado='T'");
   $term=$db->num_rows($resulta);
@@ -139,7 +140,7 @@
                         </div>
 
                         <div class="medium-4 columns">
-                            <h2><?=$casos?></h2>
+                            <h2><?=$casosP?></h2>
                             <h6>Casos en Proceso</h6>
                         </div>
                         <div class="medium-4 columns">

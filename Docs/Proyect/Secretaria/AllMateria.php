@@ -21,7 +21,7 @@
 		<table role="grid">
 			<thead>
 				<th scope="column">Tipo</th>
-				<th scope="column">Acciones</th>
+				<!-- <th scope="column">Acciones</th> -->
 			</thead>
 			<tbody>
 				<?php foreach ($usuarios as $usuario):?>
@@ -29,14 +29,14 @@
 					<td scope="row">
 						<?= ($usuario->getTipo()) ?>    
 					</td>
-					<td scope="row">
+					<!-- <td scope="row">
 						<a onclick = "if (!confirm('¿Desea borrar el usuario?')) return false;" href="index.php?pag=dMa&iduser=<?=$usuario->getId();?>">
                         	<img src="Res/del.png">
                         </a>
                         <a href="index.php?pag=mod&id=<?=$usuario->getID();?> ">
                         	<img src="Res/up.png">
                         </a>
-					</td>
+					</td> -->
 				</tr>
 				<?php endforeach ?>
 			</tbody>

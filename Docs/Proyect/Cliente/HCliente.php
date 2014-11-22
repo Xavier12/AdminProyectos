@@ -17,7 +17,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Secretaria</title>
+  <title>cliente</title>
   <link rel="stylesheet" type="text/css" href="../css/foundation.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <meta name="viewport" content="width=device-width">
@@ -26,7 +26,7 @@
 </head>
 <body>
 <div class="contain-to-grid sticky">
-	<div class="top-bar" data-topbar>
+	<div class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
   		<ul class="title-area">
     		<li class="name">
       			<h1 ><a id="cliente">Cliente</a></h1>
@@ -37,6 +37,7 @@
     		<section class="top-bar-section">
     			<ul class="right">
             <li><a href="Abogado.php">Mi caso</a></li>
+            <li><a href="index.php?pag=cerrar" class="alert button expand">Cerrar Sesion</a></li>
             <li><a href="index.php?pag=cerrar" class="alert button expand">Cerrar Sesion</a></li>
 
     			</ul>

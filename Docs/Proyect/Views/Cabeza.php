@@ -18,6 +18,7 @@
     <script type="text/javascript" src="js/jssor.core.js"></script>
     <script type="text/javascript" src="js/jssor.utils.js"></script>
     <script type="text/javascript" src="js/jssor.slider.js"></script>
+    <script type="text/javascript" src="../js/render.js"></script>
     <script src="js/vendor/modernizr.js"></script>
 
 </head>

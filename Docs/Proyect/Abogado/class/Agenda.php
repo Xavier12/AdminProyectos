@@ -13,33 +13,6 @@
 			$this->abogado=$abogado;
 		}
 
-		public static function getAgenda($id,$bd)
-		{
-			$row =$bd->ejecutar(" SELECT *  FROM Agenda WHERE idAgenda='{$id}' ");
-			$result=$bd->obtener_fila($row,0);
-			
-		return $result;	
-		}
-
-		public static function update($agenda, $bd)
-		{
-			$id= $agenda['idea'];
-			$lugar=$agenda['lugar'];
-			$dir=$agenda['dir'];
-			$act=$agenda['act'];
-			$hr=$agenda['hr'];
-			$secre=$agenda['secre'];
-			$abogado=$agenda['abo'];
-			$client=$agenda['client'];
-			$query="UPDATE Agenda SET `Lugar` = '{$lugar}', `Direccion` = '{$dir}', `Actividad` = '{$act}', `Hr` = '{$hr}', `SecretariaidSecretaria` ='{$secre}', `AbogadoidAbogado` ='{$abogado}', `ClienteidCliente` ='{$client}' WHERE `idAgenda` = '{$id}' ";
-			
-			$bd->ejecutar($query);	
-
-			echo '<script language="javascript">
-					alert("pepe");
-				</script>';		
-		}
-
 		public static function addAgenda($bd,$agenda)
 		{
 			$lugar=$agenda['lugar'];
@@ -70,8 +43,6 @@
 			}
 			return $usuarios;
 		}
-
-		
 
 		public static function removeAgenda($id, $bd)
 		{	
